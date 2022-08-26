@@ -1,0 +1,153 @@
+body,html, header{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+  background-color: rgb(31, 41, 50);
+}
+
+/* Header*/
+
+header {
+  display: grid;
+  box-shadow: 0px 10px 10px rgb(75, 0, 0);
+  background: url("../images/background.jpg") no-repeat center center ;
+  background-size: cover;
+  backdrop-filter: blur(20px);
+  
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+header ul li {
+  text-transform: none;
+}
+header ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0px 5px 5px black;
+  font-size: 20px;
+  font-family: "Lato", Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 5px;
+}
+header ul li a:hover{
+    border : solid white 2px
+}
+
+/* Article */
+
+.articlewrapper {
+  margin: auto;
+  max-width: 1100px;
+
+  margin-top: 20px;
+}
+/* Craft */
+
+article {
+    margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  border: black solid 1px;
+  /* border-radius: 20px; */
+  box-shadow: black 5px 5px 5px;
+  background-color: #2e353a;
+}
+ h2{
+    color: white;
+    font-size: 30px;
+    font-family: "Lato", Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    margin: 50px;
+  }
+article h3 {
+  color: white;
+  font-size: 25px;
+  font-family: "Lato", Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 20px;
+}
+article table {
+  margin: auto;
+}
+article img {
+  padding: 0;
+  margin: 0;
+  width: 55px;
+}
+article div table tbody tr td {
+  padding: 10px;
+}
+article input {
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 15px;
+  color: #fff;
+  background: #363e45;
+  border: none;
+  border-radius: 5px;
+}
+article p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.txt_amount {
+  position: relative;
+}
+
+.raidcalc span {
+  position: absolute;
+  display: inline-block;
+  bottom: 2px;
+  font-weight: bold;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  right: 3px;
+  width: 100%;
+  text-shadow: -1px -1px 0 #21241c, 1px 1px 0 #21241c, -1px 1px 0 #21241c,
+    1px -1px 0 #21241c;
+}
+
+
+/* structure */
+
+.structure{
+  display: block;
+}
+
+
+.StructureTable span{
+  color: white;
+  display: inline-block;
+  bottom: 2px;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  right: 3px;
+  width: 100%;
+  text-shadow: -1px -1px 0 #21241c, 1px 1px 0 #21241c, -1px 1px 0 #21241c,
+    1px -1px 0 #21241c;
+}
+
+
+
+

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rustsheet</title>
+    <script src="ressources/script.js" defer></script>
+    <link rel="stylesheet" href="ressources/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#raidcalculator">RaidCalculator</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="articlewrapper" id="raidcalculator">
+      <h2>RaidCalculator</h2>
+      <article class="craft">
+        <div>
+          <h3>Fabrication</h3>
+          <table class="raidcalc" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td><img src="images/rocket.png" alt="roquette" /></td>
+                <td>
+                  <input id="rocket-in" class="raidinput" placeholder="0" oninput="calcul()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/rocket-hv.png" alt="roquette hv" /></td>
+                <td>
+                  <input id="rocket-hv-in" class="raidinput" placeholder="0" oninput="calcul()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/rocket-inc.png" alt="roquette inc" /></td>
+                <td>
+                  <input id="rocket-inc-in" class="raidinput" placeholder="0" oninput="calcul()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/timed-explo.png" alt="c4" /></td>
+                <td>
+                  <input id="timed-explo-in" class="raidinput" placeholder="0" oninput="calcul()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+              </tr>
+              <tr>
+                <td><img src="images/explo-ammo.png" alt="explo-ammo" /></td>
+                <td>
+                  <input id="explo-ammo-in" class="raidinput" placeholder="0" oninput="calcul()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Total des ressources</h3>
+          <table class="raidcalc" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td id="td_gp" class="txt_amount">
+                  <img src="images/gunpowder.png" alt="" />
+                  <span id="nb_gp">0</span>
+                </td>
+                <td>
+                  <p>=</p>
+                </td>
+                <td id="td_sulfur" class="txt_amount">
+                  <img src="images/souffres.png" alt="" />
+                  <span id="nb_sulfur">0</span>
+                </td>
+                <td id="td_coal" class="txt_amount">
+                  <img src="images/charbon.png" alt="" />
+                  <span id="nb_coal">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td id="td_lg" class="txt_amount">
+                  <img src="images/lowgrade.png" alt="" />
+                  <span id="nb_lg">0</span>
+                </td>
+                <td>
+                  <p>=</p>
+                </td>
+                <td id="td_cloth" class="txt_amount">
+                  <img src="images/cloth.png" alt="" />
+                  <span id="nb_cloth">0</span>
+                </td>
+                <td id="td_fat" class="txt_amount">
+                  <img src="images/animal-fat.png" alt="" />
+                  <span id="nb_fat">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td id="td_explo" class="txt_amount">
+                  <img src="images/explo.png" alt="" />
+                  <span id="nb_explo">0</span>
+                </td>
+                <td id="td_metalfrags" class="txt_amount">
+                  <img src="images/metalfrags.png" alt="" />
+                  <span id="nb_metalfrags">0</span>
+                </td>
+                <td id="td_techtrash" class="txt_amount">
+                  <img src="images/techtrash.png" alt="" />
+                  <span id="nb_techtrash">0</span>
+                </td>
+                <td id="td_pipe" class="txt_amount">
+                  <img src="images/pipe.png" alt="" />
+                  <span id="nb_pipe">0</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article class="nb_max">
+        <div>
+          <h3>Nombre de souffres</h3>
+          <table class="raidcalc" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td><img src="images/souffres.png" alt="roquette" /></td>
+                <td>
+                  <input id="souffres-in" class="raidinput" placeholder="0" oninput="calculMax()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Nombres maximum</h3>
+          <table class="raidcalc" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td id="td_gp_max" class="txt_amount">
+                  <img src="images/gunpowder.png" calt="" />
+                  <span id="nb_max_gp">0</span>
+                </td>
+                <td id="td_rocket_max" class="txt_amount">
+                  <img src="images/rocket.png" calt="" />
+                  <span id="nb_max_rocket">0</span>
+                </td>
+                <td id="td_rocket_hv_max" class="txt_amount">
+                  <img src="images/rocket-hv.png" calt="" />
+                  <span id="nb_max_rocket_hv">0</span>
+                </td>
+              </tr>
+              <tr>
+                <td id="td_rocket_inc_max" class="txt_amount">
+                  <img src="images/rocket-inc.png" calt="" />
+                  <span id="nb_max_rocket_inc">0</span>
+                </td>
+                <td id="td_timed_explo_max" class="txt_amount">
+                  <img src="images/timed-explo.png" calt="" />
+                  <span id="nb_max_timed_explo">0</span>
+                </td>
+                <td id="td_explo_ammo_max" class="txt_amount">
+                  <img src="images/explo-ammo.png" calt="" />
+                  <span id="nb_max_explo_ammo">0</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article class="structure">
+        <div>
+          <h3>Structures</h3>
+          <table class="StructureTable" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td></td>
+                <td>
+                  <img src="images/wooden-wall.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/stone-wall.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/metal-wall.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/armored-wall.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/sheet-metal-door.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/garage-door.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/armored-door.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/ladder-hatch.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/wooden-external-wall.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/stone-external-wall.png" alt="" />
+                </td>
+                <td>
+                  <img src="images/autoturret.png" alt="" />
+                </td>
+              </tr>
+              <tr class="hp_structure">
+                <td>
+                  <p>HP :</p>
+                </td>
+                <td>
+                  <p>250</p>
+                </td>
+                <td>
+                  <p>500</p>
+                </td>
+                <td>
+                  <p>1000</p>
+                </td>
+                <td>
+                  <p>2000</p>
+                </td>
+                <td>
+                  <p>250</p>
+                </td>
+                <td>
+                  <p>600</p>
+                </td>
+                <td>
+                  <p>800</p>
+                </td>
+                <td>
+                  <p>250</p>
+                </td>
+                <td>
+                  <p>500</p>
+                </td>
+                <td>
+                  <p>500</p>
+                </td>
+                <td>
+                  <p>1000</p>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <input id="wooden-wall-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="stone-wall-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="metal-wall-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="armored-wall-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="sheet-metal-door-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="garage-door-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="armored-door-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="ladder-hatch-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="wooden-external-wall-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="stone-external-wall-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td>
+                  <input id="autoturret-in" class="raidinput" placeholder="0" oninput="Craft()"
+                    onkeypress="return isNumberKey(event)" />
+                </td>
+                <td><span>Total</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/rocket.png" alt="" /></td>
+                <td><span id="nb_craft_rocket_1">0</span></td>
+                <td><span id="nb_craft_rocket_2">0</span></td>
+                <td><span id="nb_craft_rocket_3">0</span></td>
+                <td><span id="nb_craft_rocket_4">0</span></td>
+                <td><span id="nb_craft_rocket_5">0</span></td>
+                <td><span id="nb_craft_rocket_6">0</span></td>
+                <td><span id="nb_craft_rocket_7">0</span></td>
+                <td><span id="nb_craft_rocket_8">0</span></td>
+                <td><span id="nb_craft_rocket_9">0</span></td>
+                <td><span id="nb_craft_rocket_10">0</span></td>
+                <td><span id="nb_craft_rocket_11">0</span></td>
+                <td><span id="nb_tot_rocket">0</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/rocket-hv.png" alt="" /></td>
+                <td><span id="nb_craft_rocket_hv_1">0</span></td>
+                <td><span id="nb_craft_rocket_hv_2">0</span></td>
+                <td><span id="nb_craft_rocket_hv_3">0</span></td>
+                <td><span id="nb_craft_rocket_hv_4">0</span></td>
+                <td><span id="nb_craft_rocket_hv_5">0</span></td>
+                <td><span id="nb_craft_rocket_hv_6">0</span></td>
+                <td><span id="nb_craft_rocket_hv_7">0</span></td>
+                <td><span id="nb_craft_rocket_hv_8">0</span></td>
+                <td><span id="nb_craft_rocket_hv_9">0</span></td>
+                <td><span id="nb_craft_rocket_hv_10">0</span></td>
+                <td><span id="nb_craft_rocket_hv_11">0</span></td>
+                <td><span id="nb_tot_rocket_hv">0</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/rocket-inc.png" alt="" /></td>
+                <td><span id="nb_craft_rocket_inc_1">0</span></td>
+                <td><span id="nb_craft_rocket_inc_2">0</span></td>
+                <td><span id="nb_craft_rocket_inc_3">0</span></td>
+                <td><span id="nb_craft_rocket_inc_4">0</span></td>
+                <td><span id="nb_craft_rocket_inc_5">0</span></td>
+                <td><span id="nb_craft_rocket_inc_6">0</span></td>
+                <td><span id="nb_craft_rocket_inc_7">0</span></td>
+                <td><span id="nb_craft_rocket_inc_8">0</span></td>
+                <td><span id="nb_craft_rocket_inc_9">0</span></td>
+                <td><span id="nb_craft_rocket_inc_10">0</span></td>
+                <td><span id="nb_craft_rocket_inc_11">0</span></td>
+                <td><span id="nb_tot_rocket_inc">0</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/timed-explo.png" alt="" /></td>
+                <td><span id="nb_craft_timed_explo_1">0</span></td>
+                <td><span id="nb_craft_timed_explo_2">0</span></td>
+                <td><span id="nb_craft_timed_explo_3">0</span></td>
+                <td><span id="nb_craft_timed_explo_4">0</span></td>
+                <td><span id="nb_craft_timed_explo_5">0</span></td>
+                <td><span id="nb_craft_timed_explo_6">0</span></td>
+                <td><span id="nb_craft_timed_explo_7">0</span></td>
+                <td><span id="nb_craft_timed_explo_8">0</span></td>
+                <td><span id="nb_craft_timed_explo_9">0</span></td>
+                <td><span id="nb_craft_timed_explo_10">0</span></td>
+                <td><span id="nb_craft_timed_explo_11">0</span></td>
+                <td><span id="nb_tot_timed_explo">0</span></td>
+              </tr>
+              <tr>
+                <td><img src="images/explo-ammo.png" alt="" /></td>
+                <td><span id="nb_craft_explo_ammo_1">0</span></td>
+                <td><span id="nb_craft_explo_ammo_2">0</span></td>
+                <td><span id="nb_craft_explo_ammo_3">0</span></td>
+                <td><span id="nb_craft_explo_ammo_4">0</span></td>
+                <td><span id="nb_craft_explo_ammo_5">0</span></td>
+                <td><span id="nb_craft_explo_ammo_6">0</span></td>
+                <td><span id="nb_craft_explo_ammo_7">0</span></td>
+                <td><span id="nb_craft_explo_ammo_8">0</span></td>
+                <td><span id="nb_craft_explo_ammo_9">0</span></td>
+                <td><span id="nb_craft_explo_ammo_10">0</span></td>
+                <td><span id="nb_craft_explo_ammo_11">0</span></td>
+                <td><span id="nb_tot_explo_ammo">0</span></td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  </body>
+
+</html>

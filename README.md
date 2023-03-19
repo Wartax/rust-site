@@ -14,3 +14,5 @@
 
 Vous pouvez visitez ou/et utilisé ce site via ce [lien](https://wartax.github.io/rust-site/) 
 
+
+Ce site est open source
